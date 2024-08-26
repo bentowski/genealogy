@@ -4,12 +4,12 @@ RUN npm install -g npm@latest
 
 WORKDIR /home/node/www
 
-COPY --chown=node:node ./react/package*.json ./
+COPY --chown=node:node ./package*.json ./
 
 RUN npm ci
 
-COPY --chown=node:node ./react ./
+COPY --chown=node:node ./ ./
 
-#USER node
+USER node
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev", "-- --host"]
