@@ -10,6 +10,6 @@ RUN npm ci
 
 COPY --chown=node:node ./ ./
 
-USER node
+# USER node
 
 CMD ["npm", "run", "dev", "-- --host"]
